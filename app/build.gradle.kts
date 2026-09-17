@@ -172,6 +172,8 @@ dependencies {
     // JetBrains Koog: real agent orchestration and tool-calling on Android/JVM.
     // 1.1.1 is kept because it supports this project's minSdk 26 setup.
     implementation("ai.koog:koog-agents:1.1.1")
+    implementation("ai.koog:prompt-executor-google-client:1.1.1-beta")
+    implementation("ai.koog:prompt-executor-llms-all:1.1.1-beta")
 
     // Google LiteRT-LM Kotlin API for on-device LLM inference.
     implementation("com.google.ai.edge.litertlm:litertlm-android:0.16.1")

@@ -114,8 +114,7 @@ class TtsController(
                         provider = "cpu"
                     ),
                     maxNumSentences = 1,
-                    silenceScale = 0.2f
-                )
+                              )
                 jarvis = OfflineTts(context.assets, config)
                 jarvisReady = true
                 Log.i(TAG, "JARVIS English TTS initialized")
