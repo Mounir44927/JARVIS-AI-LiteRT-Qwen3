@@ -43,7 +43,7 @@ if(ANDROID)
     find_library(log-lib log)
     find_library(android-lib android)
 
-    target_link_libraries(jarvis_whisper
+    target_link_libraries(jarvis_whisper PRIVATE
         ${log-lib}
         ${android-lib}
     )
