@@ -21,8 +21,16 @@ jobs:
           java-version: '17'
           cache: gradle
 
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Make Gradle executable
         run: chmod +x gradlew scripts/*.sh
+
+      - name: Build JARVIS Rive asset
+        run: ./scripts/build_jarvis_rive.sh
 
       - name: Prepare Sherpa-ONNX static TTS runtime
         run: ./scripts/setup_sherpa_tts.sh
