@@ -1,0 +1,21 @@
+.gradle/
+.idea/
+*.iml
+local.properties
+*.keystore
+*.jks
+secrets.properties
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+app/build/
+artifacts/
+
+# Generated CI/local binary dependency
+app/libs/*.aar
+
+# Generated third-party/native STT source and model caches
+app/src/main/cpp/third_party/whisper.cpp/
+.cache/whisper.cpp-v1.9.4.tar.gz
+.cache/whisper.cpp-v1.9.4.unpack/

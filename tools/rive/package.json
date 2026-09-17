@@ -1,0 +1,11 @@
+{
+  "name": "jarvis-rive-orb-generator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node --experimental-strip-types generate_jarvis_orb.ts"
+  },
+  "dependencies": {
+    "@stevysmith/rive-generator": "0.1.1"
+  }
+}
