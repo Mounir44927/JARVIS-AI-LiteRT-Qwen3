@@ -3,8 +3,8 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LIBS="$ROOT_DIR/app/libs"
-AAR="$LIBS/sherpa-onnx-1.10.13.aar"
-URL="${SHERPA_AAR_URL:-https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.13/sherpa-onnx-1.10.13.aar}"
+AAR="$LIBS/sherpa-onnx-1.10.35.aar"
+URL="${SHERPA_AAR_URL:-https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.10.35/sherpa-onnx-1.10.35.aar}"
 
 command -v curl >/dev/null || { echo "curl is required" >&2; exit 1; }
 command -v unzip >/dev/null || { echo "unzip is required" >&2; exit 1; }
@@ -39,4 +39,4 @@ if ! verify_aar "$TMP"; then
 fi
 
 mv "$TMP" "$AAR"
-echo "Sherpa-ONNX 1.10.13 AAR ready: $AAR"
+echo "Sherpa-ONNX 1.10.35 AAR ready: $AAR"

@@ -33,7 +33,7 @@ android {
         resources.excludes += setOf("META-INF/LICENSE*", "META-INF/NOTICE*")
         resources.pickFirsts.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
 
-        // Sherpa-ONNX 1.10.13 and OpenWakeWord 0.1.5 both use
+        // Sherpa-ONNX 1.10.35 and OpenWakeWord 0.1.5 both use
         // ONNX Runtime 1.18.0. They therefore provide the same native
         // library path. Pick one copy only after aligning both versions.
         jniLibs.pickFirsts.add("**/libonnxruntime.so")
@@ -73,10 +73,10 @@ ksp {
 
 val verifySherpaTts = tasks.register("verifySherpaTts") {
     doLast {
-        val aar = project.file("libs/sherpa-onnx-1.10.13.aar")
+        val aar = project.file("libs/sherpa-onnx-1.10.35.aar")
         if (!aar.isFile || aar.length() < 1_000_000L) {
             error(
-                "Required Sherpa-ONNX 1.10.13 AAR is missing or invalid: ${aar.relativeTo(project.projectDir)}. " +
+                "Required Sherpa-ONNX 1.10.35 AAR is missing or invalid: ${aar.relativeTo(project.projectDir)}. " +
                     "Run scripts/setup_sherpa_tts.sh before building."
             )
         }
@@ -159,10 +159,10 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
     implementation("com.squareup.okhttp3:okhttp:5.1.0")
-    // Offline Piper/VITS TTS engine. Sherpa-ONNX 1.10.13 uses
+    // Offline Piper/VITS TTS engine. Sherpa-ONNX 1.10.35 uses
     // ONNX Runtime 1.18.0, matching OpenWakeWord 0.1.5.
     // This keeps one compatible ONNX Runtime version across both engines.
-    implementation(files("libs/sherpa-onnx-1.10.13.aar"))
+    implementation(files("libs/sherpa-onnx-1.10.35.aar"))
     // Real on-device wake-word detection via ONNX Runtime 1.18.0.
     implementation("xyz.rementia:openwakeword:0.1.5")
 

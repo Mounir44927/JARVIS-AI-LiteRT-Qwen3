@@ -13,7 +13,7 @@ grep -q 'Icons.Filled.Settings' "$HOME_SCREEN"
 ! grep -q 'icons.automirrored.filled.Settings' "$HOME_SCREEN"
 ! grep -q 'Icons.AutoMirrored.Filled.Settings' "$HOME_SCREEN"
 
-grep -q 'sherpa-onnx-1.10.13.aar' "$BUILD_FILE"
+grep -q 'sherpa-onnx-1.10.35.aar' "$BUILD_FILE"
 grep -q 'jniLibs\.pickFirsts.*libonnxruntime' "$BUILD_FILE"
 grep -q 'setup_sherpa_tts.sh' "$WORKFLOW"
 grep -q 'setup_jarvis_voice.sh' "$WORKFLOW"
