@@ -145,7 +145,7 @@ class TtsController(
     }
 
     private suspend fun speakJarvis(text: String, onFallback: () -> Unit) {
-        if (!requestAudioFocus()) return
+        if (!requestAudioFocus()) {\n            Log.w(TAG, "Audio focus unavailable; falling back to Android TTS")\n            onFallback()\n            main.post { speakWithAndroidFallback(text) }\n            return\n        }
         var track: AudioTrack? = null
         try {
             stopCurrentTrack()
